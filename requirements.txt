@@ -105,7 +105,7 @@ randomname==0.1.5
 rasa==2.6.2
 rasa-sdk==2.6.0
 rasa-x==0.40.0
-redis==3.5.3
+redis==3.5.3n
 regex==2020.9.27
 requests==2.25.1
 requests-oauthlib==1.3.0
