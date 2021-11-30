@@ -5,7 +5,8 @@ from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted, EventType, 
 from rasa_sdk import Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
-
+import dateutil.parser as dparser
+from dateutil.relativedelta import relativedelta
 
 class ActionSessionStart(Action):
     def name(self) -> Text:
@@ -69,8 +70,14 @@ class ValidateHotelForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate date arrival value."""
 
-        return {"date_arrival": slot_value}
+        date = dparser.parse(slot_value,parserinfo=dparser.parserinfo(dayfirst=True), fuzzy =True)
+        """date.day --> le mois et inversement"""
+        print(date.day, date.month , date.year )
+        if date.day > 31 or date.month > 12 or date.year < 2021:
 
+           dispatcher.utter_message(text='La date est fausse')
+           return {"date_arrival": None}
+        return {"date_arrival": slot_value}
     def validate_date_departure(
             self,
             slot_value: Any,
@@ -78,10 +85,16 @@ class ValidateHotelForm(FormValidationAction):
             tracker: Tracker,
             domain: DomainDict,
     ) -> Dict[Text, Any]:
-        """Validate date arrival value."""
+        """Validate departure value."""
+        date_depart = dparser.parse(slot_value,parserinfo=dparser.parserinfo(dayfirst=True), fuzzy=True)
+        date_arrive = dparser.parse(tracker.get_slot('date_arrival'),parserinfo=dparser.parserinfo(dayfirst=True), fuzzy = True)
 
-        #tracker.get_slot('date_arrival')
-        #dispatcher.utter_message(text='')
-        #return{'date_arrival': None,
-        #       'date_departure': None}
-        return {"date_arrival": slot_value}
+        if date_depart >= date_arrive + relativedelta(months=6) or date_arrive>date_depart :
+            dispatcher.utter_message(text='Notre hôtel ne peux pas vous accueillir aussi longtemps (Maximum 6 mois)')
+            return {'date_departure': None}
+
+
+        return{'date_departure': slot_value}
+
+
+        #return {"date_arrival": slot_value}
