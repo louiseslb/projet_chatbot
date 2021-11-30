@@ -44,8 +44,6 @@ nlu:
     - yes
     - carrément
     - carré
-
-
 - intent: deny
   examples: |
     - no
@@ -55,44 +53,47 @@ nlu:
     - je ne veux pas
     - clairement pas
     - pas vraiment
-
 - intent: mood_great
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - au top
+    - trop bien
+    - excellent
+    - je suis au max
+    - je suis au top
+    - je me sens hyper bien
+    - je me sens trop bien
+    - je suis super heureuse
+    - trop heureux
+    - je suis au top du top
+    - je me sens extrêmement bien merci
+    - tout va bien
+    - tout va super bien merci
+    - bien merci
 
 - intent: mood_unhappy
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - je suis super triste
+    - je suis triste
+    - je ne me sens pas très bien
+    - je suis enervé
+    - trop triste
+    - je suis méga triste
+    - dévastée
+    - si triste
+    - je me sens au plus mal
+    - je suis au fond du trou
+    - pas au top
+    - je suis pas au max
+    - je suis dans le mal
+    - je suis pas bien
+    - je me sens mal
+    - je suis mal
 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - es tu un bot?
+    - t'es humain?
+    - t'es un bot?
+    - est ce que tu es un homme ou une femme?
+    - t une machine?
+    - es tu un robot?

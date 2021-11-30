@@ -26,15 +26,15 @@ responses:
   - text: Salut mon pote ! ça va ?
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
-    text: 'Here is something to cheer you up:'
+    text: 'Ça devrait te remonter le moral:'
   utter_did_that_help:
-  - text: Did that help you?
+  - text: Ça va un peu mieux?
   utter_happy:
-  - text: Great, carry on!
+  - text: Super, continues comme ça!
   utter_goodbye:
   - text: Bonne journée, mon ami !
   utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+  - text: Je suis un bot, crée par Julien et Louise.
 actions: []
 forms: {}
 e2e_actions: []
