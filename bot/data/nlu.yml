@@ -14,8 +14,8 @@ nlu:
     - Allons y
     - Salut mec
     - Bon jour
-    - Bonne nuit
     - Holla
+    - Bonsoir
 
 - intent: goodbye
   examples: |
@@ -28,6 +28,7 @@ nlu:
     - bonne nuit
     - bye
     - bye bye
+    - Bonne nuit
     - Bonne fin de journée
     - à plus tard
     - Salut
@@ -123,6 +124,21 @@ nlu:
     - Super merci
     - Merci beaucoup
     - top merci!
+    - génial merci
+- intent: out_of_scope
+  examples: |
+    - il est quelle heure
+    - je voudrais aller au restaurant
+    - on peut faire une partie d'echecs ?
+    - tu peux me book des places de concert stp
+    - j'ai envie de trouver des activités à faire ce weekend
+    - tu peux m'aider avec mes devoirs d'hsitoire
+    - je voudrais contacter ma banquière
+    - J'aimerais faire mes courses en ligne
+    - t'as pas des plans pour des billets d'avion
+    - Je voudrais réserver un billet d'avion
+    - J'aimerais réserver un train pour aller à Bandol
+    - Je veux prendre un abonnement SNCF
 - intent: inform
   examples: |
     - je voudrais arriver le [01/02/2011](date)
@@ -131,6 +147,86 @@ nlu:
     - [01/06/2019](date)
     - [12/09/2018](date)
     - [09/04/2020](date)
+    - [30/08/2020](date)
+    - [13/01/2020](date)
+    - [29/02/2021](date)
+    - [23/10/2021](date)
+    - [05/03/2021](date)
+    - [07/11/2020](date)
+    - [02/06/2021](date)
+    - [31/07/2021](date)
+    - [19/03/2021](date)
+    - [24/04/2021](date)
+    - [22/11/2020](date)
+    - [20/03/2021](date)
+    - [22/02/2020](date)
+    - [27/07/2021](date)
+    - [28/10/2021](date)
+    - [04/06/2020](date)
+    - [28/11/2020](date)
+    - [30/10/2020](date)
+    - [26/04/2020](date)
+    - [08/07/2021](date)
+    - [08/03/2021](date)
+    - [08/06/2021](date)
+    - [20/03/2021](date)
+    - [10/06/2020](date)
+    - [24/01/2021](date)
+    - [30/07/2020](date)
+    - [14/05/2021](date)
+    - [14/12/2020](date)
+    - [26/02/2020](date)
+    - [19/07/2020](date)
+    - [15/10/2021](date)
+    - [28/10/2021](date)
+    - [04/07/2020](date)
+    - [14/05/2020](date)
+    - [23/12/2021](date)
+    - [29/01/2020](date)
+    - [10/12/2021](date)
+    - [07/06/2020](date)
+    - [11/12/2021](date)
+    - [26/05/2020](date)
+    - [31/06/2022](date)
+    - [04/05/2022](date)
+    - [23/06/2022](date)
+    - [20/11/2022](date)
+    - [03/08/2022](date)
+    - [18/09/2022](date)
+    - [20/11/2022](date)
+    - [23/02/2022](date)
+    - [17/09/2022](date)
+    - [29/08/2022](date)
+    - [21/07/2022](date)
+    - [20/08/2022](date)
+    - [30/04/2022](date)
+    - [10/03/2022](date)
+    - [05/08/2022](date)
+    - [09/10/2022](date)
+    - [16/01/2022](date)
+    - [02/02/2022](date)
+    - [21/05/2022](date)
+    - [09/10/2022](date)
+    - [02/07/2022](date)
+    - [26/01/2022](date)
+    - [09/11/2022](date)
+    - [15/02/2022](date)
+    - [09/04/2022](date)
+    - [23/01/2022](date)
+    - [12/05/2022](date)
+    - [11/07/2022](date)
+    - [01/12/2022](date)
+    - [25/01/2022](date)
+    - [31/01/2022](date)
+    - [12/03/2022](date)
+    - [17/02/2022](date)
+    - [05/02/2022](date)
+    - [11/10/2022](date)
+    - [15/08/2022](date)
+    - [18/12/2022](date)
+    - [21/12/2022](date)
+    - [26/01/2022](date)
+    - [18/04/2022](date)
     - à partir du [mars 2021](date)
     - le [07/11/2020](date)
     - [10/07/2020](date)
@@ -147,7 +243,85 @@ nlu:
     - [alex@orange.fr](mail)
     - [julien.paublant@imt-nord-europe.fr](mail)
     - [adrien.mal@outlook.fr](mail)
-
+    - [1](number)
+    - [2](number)
+    - [3](number)
+    - [4](number)
+    - [5](number)
+    - [6](number)
+    - [7](number)
+    - [8](number)
+    - [9](number)
+    - [10](number)
+    - [11](number)
+    - [12](number)
+    - [13](number)
+    - [14](number)
+    - [15](number)
+    - [16](number)
+    - [17](number)
+    - [18](number)
+    - [19](number)
+    - [20](number)
+    - [21](number)
+    - [22](number)
+    - [23](number)
+    - [24](number)
+    - [25](number)
+    - [26](number)
+    - [27](number)
+    - [28](number)
+    - [29](number)
+    - [douglas76@martin.com](mail)
+    - [cfloyd@davidson-allen.biz](mail)
+    - [christina35@jordan-stone.com](mail)
+    - [sharonruiz@foley-jacobson.com](mail)
+    - [carriehodge@johnson.org](mail)
+    - [joanking@ayers.com](mail)
+    - [thomaspeters@sloan-walter.com](mail)
+    - [davisjason@watkins-jones.org](mail)
+    - [clopez@sims-gilbert.biz](mail)
+    - [bhicks@richards-nicholson.net](mail)
+    - [owood@parker-garrett.net](mail)
+    - [brian67@nichols.net](mail)
+    - [hesslisa@choi.info](mail)
+    - [vhess@hernandez.com](mail)
+    - [gpierce@sweeney.com](mail)
+    - [larsonstephen@mendoza.com](mail)
+    - [jeffreyjames@johnson-roberts.com](mail)
+    - [ywilliams@hensley-robinson.com](mail)
+    - [westamanda@meyer-pearson.com](mail)
+    - [kevinhughes@lewis.com](mail)
+    - [dlang@reed-brown.com](mail)
+    - [natasha44@durham-hall.info](mail)
+    - [rachel52@munoz.com](mail)
+    - [wheelerkrista@chavez.com](mail)
+    - [vanessahayes@bell-moore.com](mail)
+    - [rebecca42@gardner.com](mail)
+    - [ecruz@arnold-mccarthy.com](mail)
+    - [haynescollin@bradley.com](mail)
+    - [rhonda90@mccarty.com](mail)
+    - [randy70@hayes.biz](mail)
+    - [qkhan@jackson.com](mail)
+    - [dbenson@hodges-sims.com](mail)
+    - [nking@mcdonald.com](mail)
+    - [michael69@vaughan.org](mail)
+    - [taylornunez@collins-king.org](mail)
+    - [riveralaura@curry.com](mail)
+    - [chadbrown@carlson.org](mail)
+    - [maldonadojohnathan@buchanan.net](mail)
+    - [cristian78@rodriguez.com](mail)
+    - [rmercado@hanson.com](mail)
+    - [michaelpittman@barker.com](mail)
+    - [terripugh@martin.com](mail)
+    - [tranamanda@bishop.biz](mail)
+    - [terrelljennifer@parker-davis.com](mail)
+    - [hollowayshelley@campbell-mcguire.info](mail)
+    - [amandahughes@hernandez-stone.info](mail)
+    - [reynoldsalan@dickerson.com](mail)
+    - [tylersimpson@lewis.org](mail)
+    - [ryan55@martinez-lindsey.com](mail)
+    - [kellywalls@griffith.org](mail)
 - intent: change_dates
   examples: |
     - Dates

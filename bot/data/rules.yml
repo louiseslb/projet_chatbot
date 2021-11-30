@@ -17,10 +17,20 @@ rules:
   - intent: ask_reservation
   - action: utter_confirm_hotel
 
-- rule: Asks to reserve a hotel
+- rule: thanks
+  steps:
+  - intent: thanks
+  - action: utter_welcome
+
+- rule: Restart
   steps:
   - intent: restart
   - action: action_restart
+
+- rule: Asks to reserve a hotel
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
 
 - rule: Asks to reserve a hotel
   steps:
@@ -59,6 +69,14 @@ rules:
   - action: hotel_form
   - active_loop: hotel_form
 
+- rule: change dates
+  steps:
+  - action: utter_recap
+  - intent: change_dates
+  - action: action_reset_dates
+  - action: hotel_form
+  - active_loop: hotel_form
+
 - rule: change number persons
   steps:
   - action: utter_where_error
@@ -67,9 +85,25 @@ rules:
   - action: hotel_form
   - active_loop: hotel_form
 
+- rule: change number persons
+  steps:
+  - action: utter_recap
+  - intent: change_number_person
+  - action: action_reset_number_person
+  - action: hotel_form
+  - active_loop: hotel_form
+
 - rule: change mail
   steps:
   - action: utter_where_error
+  - intent: change_mail
+  - action: action_reset_mail
+  - action: hotel_form
+  - active_loop: hotel_form
+
+- rule: change mail
+  steps:
+  - action: utter_recap
   - intent: change_mail
   - action: action_reset_mail
   - action: hotel_form

@@ -69,8 +69,6 @@ class ValidateHotelForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate date arrival value."""
 
-        dispatcher.utter_message(text='')
-
         return {"date_arrival": slot_value}
 
     def validate_date_departure(
@@ -82,10 +80,8 @@ class ValidateHotelForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate date arrival value."""
 
-        tracker.get_slot('date_arrival')
-        dispatcher.utter_message(text='')
-        return{'date_arrival': None,
-               'date_departure': None}
-
-
-        #return {"date_arrival": slot_value}
+        #tracker.get_slot('date_arrival')
+        #dispatcher.utter_message(text='')
+        #return{'date_arrival': None,
+        #       'date_departure': None}
+        return {"date_arrival": slot_value}

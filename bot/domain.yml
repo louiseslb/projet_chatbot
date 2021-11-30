@@ -111,6 +111,8 @@ responses:
   - text: Merci pour cet échange, un membre du personnel reviendra vers vous avec un devis dans les 24 prochaines heures.
   utter_welcome:
   - text: Avec plaisir :)
+  utter_out_of_scope:
+  - text: Je suis désolée, je ne peux pas répondre à cela.
 actions:
 - action_session_start
 - action_restart
@@ -129,8 +131,8 @@ forms:
       - entity: date
         type: from_entity
       number_person:
-      - entity: number
-        type: from_entity
+        - entity: number
+          type: from_entity
       mail:
       - entity: mail
         type: from_entity
