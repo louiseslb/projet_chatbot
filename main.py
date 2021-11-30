@@ -1,5 +1,6 @@
 from faker import Faker
 import datetime
+import re
 
 fake = Faker()
 """for _ in range(40):
@@ -12,4 +13,10 @@ for _ in range(40):
     print('- [' + str(i) + '](number)')"""
 
 """for i in range(50):
-    print('- [' + fake.company_email() + '](mail)')"""
+    print(fake.company_email())"""
+
+r = re.compile("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
+if r.match("louise@gmailm"):
+    print('ok')
+else:
+    print('not ok')

@@ -33,6 +33,8 @@ intents:
     use_entities: true
 - change_mail:
     use_entities: true
+- out_of_scope:
+    use_entities: true
 entities:
 - date
 - number

@@ -5,6 +5,8 @@ from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted, EventType, 
 from rasa_sdk import Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
+import re
+
 import dateutil.parser as dparser
 from dateutil.relativedelta import relativedelta
 
@@ -74,7 +76,6 @@ class ValidateHotelForm(FormValidationAction):
         """date.day --> le mois et inversement"""
         print(date.day, date.month , date.year )
         if date.day > 31 or date.month > 12 or date.year < 2021:
-
            dispatcher.utter_message(text='La date est fausse')
            return {"date_arrival": None}
         return {"date_arrival": slot_value}
@@ -90,11 +91,34 @@ class ValidateHotelForm(FormValidationAction):
         date_arrive = dparser.parse(tracker.get_slot('date_arrival'),parserinfo=dparser.parserinfo(dayfirst=True), fuzzy = True)
 
         if date_depart >= date_arrive + relativedelta(months=6) or date_arrive>date_depart :
-            dispatcher.utter_message(text='Notre hôtel ne peux pas vous accueillir aussi longtemps (Maximum 6 mois)')
+            dispatcher.utter_message(text='Malheureusement, notre hôtel ne peux pas vous accueillir aussi longtemps (Maximum 6 mois)')
             return {'date_departure': None}
-
 
         return{'date_departure': slot_value}
 
+    def validate_mail(
+            self,
+            slot_value: Any,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate mail value."""
+        print('validate mail')
 
-        #return {"date_arrival": slot_value}
+        r = re.compile("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
+        if r.match(slot_value):
+            return {'mail': slot_value}
+        else:
+            dispatcher.utter_message(text="L'adresse mail saisie semble invalide.")
+            return {'mail': None}
+
+    def validate_number_person(
+            self,
+            slot_value: Any,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate date arrival value."""
+        return {'number_person': slot_value}
