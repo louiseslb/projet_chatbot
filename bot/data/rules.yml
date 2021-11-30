@@ -29,7 +29,6 @@ rules:
   - action: hotel_form
   - active_loop: hotel_form
 
-
 - rule: Submit form
   condition:
   - active_loop: hotel_form
@@ -51,3 +50,27 @@ rules:
   - action: utter_recap
   - intent: deny
   - action: utter_where_error
+
+- rule: change dates
+  steps:
+  - action: utter_where_error
+  - intent: change_dates
+  - action: action_reset_dates
+  - action: hotel_form
+  - active_loop: hotel_form
+
+- rule: change number persons
+  steps:
+  - action: utter_where_error
+  - intent: change_number_person
+  - action: action_reset_number_person
+  - action: hotel_form
+  - active_loop: hotel_form
+
+- rule: change mail
+  steps:
+  - action: utter_where_error
+  - intent: change_mail
+  - action: action_reset_mail
+  - action: hotel_form
+  - active_loop: hotel_form

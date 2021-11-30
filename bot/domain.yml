@@ -27,6 +27,12 @@ intents:
     use_entities: true
 - inform:
     use_entities: true
+- change_dates:
+    use_entities: true
+- change_number_person:
+    use_entities: true
+- change_mail:
+    use_entities: true
 entities:
 - date
 - number
@@ -79,9 +85,9 @@ responses:
       title: Non
     text: Vous souhaitez réserver des nuits dans notre hôtel c'est bien ça?
   utter_ask_date_arrival:
-  - text: À quelle date souhaitez vous arriver?
+  - text: À quelle date souhaitez vous arriver? Veuillez l'indiquer au format JJ/MM/AAAA
   utter_ask_date_departure:
-  - text: Jusqu'à quelle date souhaitez vous rester?
+  - text: Jusqu'à quelle date souhaitez vous rester? Veuillez l'indiquer au format JJ/MM/AAAA
   utter_ask_number_person:
   - text: Combien de personnes serez-vous?
   utter_ask_mail:
@@ -94,10 +100,8 @@ responses:
        - Mail = {mail}
   utter_where_error:
   - buttons:
-    - payload: Date d'arrivée
-      title: Date d'arrivée
-    - payload: Date de Départ
-      title: Date de Départ
+    - payload: Dates
+      title: Dates
     - payload: Nombre de personnes
       title: Nombre de personnes
     - payload: Adresse mail
@@ -111,6 +115,10 @@ actions:
 - action_session_start
 - action_restart
 - restaurant_form
+- action_reset_dates
+- action_reset_number_person
+- action_reset_mail
+- validate_hotel_form
 forms:
   hotel_form:
     required_slots:
@@ -120,10 +128,10 @@ forms:
       date_departure:
       - entity: date
         type: from_entity
-      mail:
-      - entity: mail
-        type: from_entity
       number_person:
       - entity: number
+        type: from_entity
+      mail:
+      - entity: mail
         type: from_entity
 e2e_actions: []

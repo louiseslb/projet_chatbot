@@ -146,4 +146,34 @@ nlu:
     - [reda@mail.fr](mail)
     - [alex@orange.fr](mail)
     - [julien.paublant@imt-nord-europe.fr](mail)
-    - [adrien.mal@outlook.fr](mail)e
+    - [adrien.mal@outlook.fr](mail)
+
+- intent: change_dates
+  examples: |
+    - Dates
+    - les dates sont fausses
+    - la date de départ est fausse
+    - date d'arrivée fausse
+    - dates incorrectes
+    - dates
+    - dates de séjour éronnées
+
+- intent: change_mail
+  examples: |
+    - Adresse mail
+    - le mail sont fausses
+    - le mail est faux
+    - adresse mail faux
+    - mails incorrect
+    - je me suis trompée sur le mail
+    - mail éronné
+
+- intent: change_number_person
+  examples: |
+    - Nombre de personnes
+    - le nombre de personnes est faux
+    - les personnes sont fausses
+    - nombre personne faux
+    - nb personnes incorrect
+    - je me suis trompée sur le nombre de personnes
+    - nb personnes éronné
