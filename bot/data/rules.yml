@@ -16,3 +16,8 @@ rules:
   steps:
   - intent: ask_reservation
   - action: utter_confirm_hotel
+
+- rule: Asks to reserve a hotel
+  steps:
+  - intent: restart
+  - action: action_restart

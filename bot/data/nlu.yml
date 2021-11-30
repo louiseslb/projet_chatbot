@@ -105,3 +105,12 @@ nlu:
     - je veux reserver des nuits dans votre hotel
     - serait il possible de réserver des nuits ?
     - je veux faire une résa
+- intent: restart
+  examples: |
+    - redémarrer
+    - restart
+    - redémarrage
+    - reboot
+    - on peut recommencer
+    - redémarre
+    - recommence

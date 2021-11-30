@@ -21,6 +21,8 @@ intents:
     use_entities: true
 - ask_reservation:
     use_entities: true
+- restart:
+    use_entities: true
 entities: []
 slots: {}
 responses:
@@ -38,13 +40,14 @@ responses:
   utter_iamabot:
   - text: Je suis un bot, crée par Julien et Louise.
   utter_confirm_hotel:
-  - text: Vous souhaitez réserver des nuits dans notre hôtel c'est bien ça?
-    buttons:
-      - title: "Oui"
-        payload: "Oui"
-      - title: "Non"
-        payload: "Non"
-
-actions: []
+  - buttons:
+    - payload: Oui
+      title: Oui
+    - payload: Non
+      title: Non
+    text: Vous souhaitez réserver des nuits dans notre hôtel c'est bien ça?
+actions:
+- action_session_start
+- action_restart
 forms: {}
 e2e_actions: []
