@@ -21,3 +21,33 @@ rules:
   steps:
   - intent: restart
   - action: action_restart
+
+- rule: Asks to reserve a hotel
+  steps:
+  - action: utter_confirm_hotel
+  - intent: affirm
+  - action: hotel_form
+  - active_loop: hotel_form
+
+
+- rule: Submit form
+  condition:
+  - active_loop: hotel_form
+  steps:
+  - action: hotel_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_recap
+
+- rule: validates recap
+  steps:
+  - action: utter_recap
+  - intent: affirm
+  - action: utter_confirmation
+
+- rule: wrong recap
+  steps:
+  - action: utter_recap
+  - intent: deny
+  - action: utter_where_error

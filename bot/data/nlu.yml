@@ -114,3 +114,36 @@ nlu:
     - on peut recommencer
     - redémarre
     - recommence
+- intent: thanks
+  examples: |
+    - merci
+    - d'accord merci beaucoup
+    - merciii
+    - ok merci
+    - Super merci
+    - Merci beaucoup
+    - top merci!
+- intent: inform
+  examples: |
+    - je voudrais arriver le [01/02/2011](date)
+    - [12/03/2022](date)
+    - [25/11/2022](date)
+    - [01/06/2019](date)
+    - [12/09/2018](date)
+    - [09/04/2020](date)
+    - à partir du [mars 2021](date)
+    - le [07/11/2020](date)
+    - [10/07/2020](date)
+    - [3](number) adultes
+    - [2](number) per
+    - [3](number) personnes
+    - [1](number) personne seulement
+    - juste [1](number)
+    - [7](number)
+    - [9](number)
+    - [3](number)
+    - [louise.saliba@gmail.com](mail)
+    - [reda@mail.fr](mail)
+    - [alex@orange.fr](mail)
+    - [julien.paublant@imt-nord-europe.fr](mail)
+    - [adrien.mal@outlook.fr](mail)e

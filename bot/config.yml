@@ -20,6 +20,8 @@ pipeline:
   - name: DIETClassifier
     epochs: 300
     constrain_similarities: true
+    entity_recognition: false
+  - name: CRFEntityExtractor
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
