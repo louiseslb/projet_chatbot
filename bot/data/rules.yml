@@ -11,3 +11,8 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Asks to reserve a hotel
+  steps:
+  - intent: ask_reservation
+  - action: utter_confirm_hotel

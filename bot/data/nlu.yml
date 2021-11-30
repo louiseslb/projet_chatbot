@@ -97,3 +97,11 @@ nlu:
     - est ce que tu es un homme ou une femme?
     - t une machine?
     - es tu un robot?
+
+- intent: ask_reservation
+  examples: |
+    - je voudrais réserver un hotel
+    - je voudrais faire une réservation
+    - je veux reserver des nuits dans votre hotel
+    - serait il possible de réserver des nuits ?
+    - je veux faire une résa
