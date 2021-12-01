@@ -108,3 +108,19 @@ rules:
   - action: action_reset_mail
   - action: hotel_form
   - active_loop: hotel_form
+
+- rule: change name
+  steps:
+  - action: utter_where_error
+  - intent: change_name
+  - action: action_reset_name
+  - action: hotel_form
+  - active_loop: hotel_form
+
+- rule: change name
+  steps:
+  - action: utter_recap
+  - intent: change_name
+  - action: action_reset_name
+  - action: hotel_form
+  - active_loop: hotel_form

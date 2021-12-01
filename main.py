@@ -22,7 +22,10 @@ else:
     print('not ok')"""
 
 
-import datetime
+for i in range(50):
+    print('- [' + fake.name() + '](name)')
+
+"""import datetime
 
 inputDate = input("Enter the date in format 'dd/mm/yy' : ")
 
@@ -37,4 +40,4 @@ except ValueError:
 if(isValidDate):
     print("Input date is valid ..")
 else:
-    print("Input date is not valid..")
+    print("Input date is not valid..")"""

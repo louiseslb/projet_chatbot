@@ -39,6 +39,7 @@ entities:
 - date
 - number
 - mail
+- name
 slots:
   date_arrival:
     type: rasa.shared.core.slots.TextSlot
@@ -56,6 +57,11 @@ slots:
     auto_fill: true
     influence_conversation: true
   mail:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  name:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
@@ -94,9 +100,12 @@ responses:
   - text: Combien de personnes serez-vous?
   utter_ask_mail:
   - text: Quelle est votre adresse mail SVP?
+  utter_ask_name:
+    - text: À quel nom souhaitez vous effectuer la réservation?
   utter_recap:
   - text: |-
-      Merci pour ces informations. ce récapitulatif est il correct? 
+      Merci pour ces informations. ce récapitulatif est il correct?
+       - Nom de réservation = {name}
        - Dates = Du {date_arrival} au {date_departure}
        - Nombre de personnes = {number_person}
        - Mail = {mail}
@@ -108,6 +117,8 @@ responses:
       title: Nombre de personnes
     - payload: Adresse mail
       title: Adresse mail
+    - payload: Nom de réservation
+      title: Nom de réservation
     text: Ou se trouve l'erreur SVP?
   utter_confirmation:
   - text: Merci pour cet échange, un membre du personnel reviendra vers vous avec un devis dans les 24 prochaines heures.
@@ -122,6 +133,7 @@ actions:
 - action_reset_dates
 - action_reset_number_person
 - action_reset_mail
+- action reset_name
 - validate_hotel_form
 forms:
   hotel_form:
@@ -138,4 +150,7 @@ forms:
       mail:
       - entity: mail
         type: from_entity
+      name:
+        - entity: name
+          type: from_entity
 e2e_actions: []

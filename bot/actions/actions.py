@@ -53,12 +53,19 @@ class ActionResetNumberPerson(Action):
         return [SlotSet('number_person', None)]
 
 
-class ActionResetMaiil(Action):
+class ActionResetMail(Action):
     def name(self):
         return "action_reset_mail"
 
     def run(self, dispatcher, tracker, domain):
         return [SlotSet('mail', None)]
+
+class ActionResetName(Action):
+    def name(self):
+        return "action_reset_name"
+
+    def run(self, dispatcher, tracker, domain):
+        return [SlotSet('name', None)]
 
 
 class ValidateHotelForm(FormValidationAction):
