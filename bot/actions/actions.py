@@ -129,10 +129,10 @@ class ValidateHotelForm(FormValidationAction):
                     text='Malheureusement, notre hôtel ne peux pas vous accueillir aussi longtemps (Maximum 6 mois)')
                 return {'date_departure': None}
             else:
-                return {"date_arrival": slot_value}
+                return {"date_departure": slot_value}
         else:
             dispatcher.utter_message(text='La date ne semble pas valide')
-            return {"date_arrival": None}
+            return {"date_departure": None}
 
     def validate_mail(
             self,
@@ -142,8 +142,6 @@ class ValidateHotelForm(FormValidationAction):
             domain: DomainDict,
     ) -> Dict[Text, Any]:
         """Validate mail value."""
-        print('validate mail')
-
         r = re.compile("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
         if r.match(slot_value):
             return {'mail': slot_value}
