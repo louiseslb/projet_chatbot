@@ -133,7 +133,7 @@ actions:
 - action_reset_dates
 - action_reset_number_person
 - action_reset_mail
-- action reset_name
+- action_reset_name
 - validate_hotel_form
 forms:
   hotel_form:
