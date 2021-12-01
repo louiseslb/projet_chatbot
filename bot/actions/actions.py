@@ -6,9 +6,11 @@ from rasa_sdk import Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 import re
+import datetime
 
 import dateutil.parser as dparser
 from dateutil.relativedelta import relativedelta
+
 
 class ActionSessionStart(Action):
     def name(self) -> Text:
@@ -72,13 +74,24 @@ class ValidateHotelForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate date arrival value."""
 
-        date = dparser.parse(slot_value,parserinfo=dparser.parserinfo(dayfirst=True), fuzzy =True)
-        """date.day --> le mois et inversement"""
-        print(date.day, date.month , date.year )
-        if date.day > 31 or date.month > 12 or date.year < 2021:
-           dispatcher.utter_message(text='La date est fausse')
-           return {"date_arrival": None}
-        return {"date_arrival": slot_value}
+        inputDate = slot_value
+        day, month, year = inputDate.split('/')
+        isValidDate = True
+        try:
+            datetime.datetime(int(year), int(month), int(day))
+        except ValueError:
+            isValidDate = False
+
+        if (isValidDate):
+            if datetime.date(int(year), int(month), int(day)) < datetime.date.today():
+                dispatcher.utter_message(text='Cette date est déja passée')
+                return {"date_arrival": None}
+            else:
+                return {"date_arrival": slot_value}
+        else:
+            dispatcher.utter_message(text='La date ne semble pas valide')
+            return {"date_arrival": None}
+
     def validate_date_departure(
             self,
             slot_value: Any,
@@ -87,14 +100,39 @@ class ValidateHotelForm(FormValidationAction):
             domain: DomainDict,
     ) -> Dict[Text, Any]:
         """Validate departure value."""
-        date_depart = dparser.parse(slot_value,parserinfo=dparser.parserinfo(dayfirst=True), fuzzy=True)
-        date_arrive = dparser.parse(tracker.get_slot('date_arrival'),parserinfo=dparser.parserinfo(dayfirst=True), fuzzy = True)
+        departureDate = slot_value
+        arrivalDate = tracker.get_slot('date_arrival')
+        day_departure, month_departure, year_departure = departureDate.split('/')
+        day_arrival, month_arrival, year_arrival = arrivalDate.split('/')
+        isValidDate = True
 
-        if date_depart >= date_arrive + relativedelta(months=6) or date_arrive>date_depart :
-            dispatcher.utter_message(text='Malheureusement, notre hôtel ne peux pas vous accueillir aussi longtemps (Maximum 6 mois)')
-            return {'date_departure': None}
+        end_date = datetime.datetime(int(year_departure), int(month_departure), int(day_departure))
+        start_date = datetime.datetime(int(year_arrival), int(month_arrival), int(day_arrival))
 
-        return{'date_departure': slot_value}
+        try:
+            datetime.datetime(int(year_departure), int(month_departure), int(day_departure))
+        except ValueError:
+            isValidDate = False
+
+        if (isValidDate):
+            if datetime.date(int(year_departure), int(month_departure), int(day_departure)) < datetime.date(
+                    int(year_arrival), int(month_arrival), int(day_arrival)):
+                dispatcher.utter_message(text="La date de départ est avant la date d'arrivée. Veuillez les resssaisir")
+                return {'date_departure': None,
+                        'date_arrival': None}
+            elif datetime.date(int(year_departure), int(month_departure), int(day_departure)) == datetime.date(
+                    int(year_arrival), int(month_arrival), int(day_arrival)):
+                dispatcher.utter_message(text="Vous ne pouvez pas arriver et partir le même jour.")
+                return {'date_departure': None}
+            elif (end_date.year - start_date.year) * 12 + (end_date.month - start_date.month) > 6:
+                dispatcher.utter_message(
+                    text='Malheureusement, notre hôtel ne peux pas vous accueillir aussi longtemps (Maximum 6 mois)')
+                return {'date_departure': None}
+            else:
+                return {"date_arrival": slot_value}
+        else:
+            dispatcher.utter_message(text='La date ne semble pas valide')
+            return {"date_arrival": None}
 
     def validate_mail(
             self,

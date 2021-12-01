@@ -15,8 +15,26 @@ for _ in range(40):
 """for i in range(50):
     print(fake.company_email())"""
 
-r = re.compile("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
+"""r = re.compile("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
 if r.match("louise@gmailm"):
     print('ok')
 else:
-    print('not ok')
+    print('not ok')"""
+
+
+import datetime
+
+inputDate = input("Enter the date in format 'dd/mm/yy' : ")
+
+day, month, year = inputDate.split('/')
+
+isValidDate = True
+try:
+    datetime.datetime(int(year), int(month), int(day))
+except ValueError:
+    isValidDate = False
+
+if(isValidDate):
+    print("Input date is valid ..")
+else:
+    print("Input date is not valid..")
