@@ -144,11 +144,11 @@ forms:
       date_departure:
       - entity: date
         type: from_entity
-      number_person:
-        - entity: number
-          type: from_entity
       mail:
       - entity: mail
+        type: from_entity
+      number_person:
+      - entity: number
         type: from_entity
       name:
         - entity: name

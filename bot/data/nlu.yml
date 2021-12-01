@@ -427,3 +427,15 @@ nlu:
     - nb personnes incorrect
     - je me suis trompée sur le nombre de personnes
     - nb personnes éronné
+
+- intent: change_name
+  examples: |
+    - le nom
+    - Nom de réservation
+    - nom
+    - nom et prenom
+    - le nom et le prenom sont faux
+    - pas le bon nom
+    - le nom est faux
+
+
