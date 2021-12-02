@@ -106,6 +106,22 @@ nlu:
     - je veux reserver des nuits dans votre hotel
     - serait il possible de réserver des nuits ?
     - je veux faire une résa
+    - reserver
+    - je veux reserver
+    - reservation
+    - reserve
+    - venir dans votre hotel
+    - dormir chez vous
+    - dormir
+    - trouver une chambre
+    - reserver une chambre
+    - hotel
+    - je veux une chambre du 12 avril jusqu'au 13 mai
+    - je veux une chambre double du 12 avril jusqu'au 13 mai
+    - chambre du 12 avril jusqu'au 13 mai
+    - reservation pour deux personnes
+    - sleep in your hotel
+    - une chambre pour dormir
 - intent: restart
   examples: |
     - redémarrer
@@ -115,6 +131,13 @@ nlu:
     - on peut recommencer
     - redémarre
     - recommence
+    - refait
+    - recommencer
+    - reprends tout du début
+    - revenir au début
+    - t'as rien compris
+    - début
+    - nouvelle discussion
 - intent: thanks
   examples: |
     - merci
@@ -125,6 +148,13 @@ nlu:
     - Merci beaucoup
     - top merci!
     - génial merci
+    - parfait merci!
+    - thx
+    - thanks
+    - MERCI
+    - lourd merci
+    - merci biennnn
+
 - intent: out_of_scope
   examples: |
     - il est quelle heure
@@ -139,6 +169,16 @@ nlu:
     - Je voudrais réserver un billet d'avion
     - J'aimerais réserver un train pour aller à Bandol
     - Je veux prendre un abonnement SNCF
+    - je veux vous embéter
+    - Tu me trouves beau ?
+    - T'as quel age
+    - T'es qui narvallo
+    - fais pas le fou avec moi
+    - bot t'es moche
+    - ca se voit t'as pas de pote
+    - tu vends ?
+    - t'es un gros looser
+
 - intent: inform
   examples: |
     - je voudrais arriver le [01/02/2011](date)
@@ -396,6 +436,33 @@ nlu:
     - [Joshua Newman](name)
     - [Amanda Wilkerson MD](name)
     - [Brian Cobb](name)
+    - [SALIBA](name)
+    - [PETIT Alexandre](name)
+    - [HAMDOUCH Reda](name)
+    - [Paublant Julien](name)
+    - [MALGOWSKY Adrien](name)
+    - [PETIT Benoit](name)
+    - [PETIT Julien](name)
+    - [PETIT Chloé](name)
+    - [Hamdouch Batoul](name)
+    - [Hamdouch  Abdellah](name)
+    - [HAMDOUCH Mouna](name)
+    - [majd fassi fehri](name)
+    - [bassma Fassi-Fehri](name)
+    - [FASSI FEHRI nabil](name)
+    - [PAUBLANT FABRICE](name)
+    - [PAUBLANT MARIA](name)
+    - [PAUBLANT ANOUK](name)
+    - [PAUBLANT MATTHIAS](name)
+    - [CARPENTIER  EMMANUELLE](name)
+    - [JEAN-CHRISTOPHE CARPENTIER](name)
+    - [carpentierclaire](name)
+    - [carpentier MARION](name)
+    - [carpentier  thithi](name)
+    - [carpentier juliette](name)
+    - [CARPENTIER JULIEN](name)
+
+
 
 
 - intent: change_dates
@@ -417,6 +484,14 @@ nlu:
     - mails incorrect
     - je me suis trompée sur le mail
     - mail éronné
+    - trompé de mail
+    - faux mail
+    - fake email
+    - ce n'est pas le bon mail
+    - E-mail faux
+    - change email
+    - mauvais mail
+
 
 - intent: change_number_person
   examples: |
@@ -427,6 +502,9 @@ nlu:
     - nb personnes incorrect
     - je me suis trompée sur le nombre de personnes
     - nb personnes éronné
+    - pas le bon nombre de pers
+    - mauvaises personnes
+    - nb personnes
 
 - intent: change_name
   examples: |
