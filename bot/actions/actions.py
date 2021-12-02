@@ -165,3 +165,13 @@ class ValidateHotelForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate date arrival value."""
         return {'number_person': slot_value}
+
+    def validate_name(
+            self,
+            slot_value: Any,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        """Validate name value."""
+        return {'name': slot_value}
