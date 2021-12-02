@@ -1,7 +1,7 @@
 from faker import Faker
 import datetime
 import re
-
+import transformers
 fake = Faker()
 """for _ in range(40):
     print('- [' + str(fake.day_of_month()) + '/' + str(fake.month()) + '/' + str(fake.date_this_decade().year) + '](date)')
@@ -22,8 +22,8 @@ else:
     print('not ok')"""
 
 
-for i in range(50):
-    print('- [' + fake.name() + '](name)')
+"""for i in range(50):
+    print('- [' + fake.name() + '](name)')"""
 
 """import datetime
 
@@ -41,3 +41,5 @@ if(isValidDate):
     print("Input date is valid ..")
 else:
     print("Input date is not valid..")"""
+
+print(transformers.__version__)

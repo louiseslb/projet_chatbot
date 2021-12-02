@@ -39,7 +39,9 @@ dm-tree==0.1.6
 dnspython==1.16.0
 docopt==0.6.2
 en-core-web-md @ https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.2.0/en_core_web_md-3.2.0-py3-none-any.whl
+Faker==9.9.0
 fbmessenger==6.0.0
+filelock==3.4.0
 fire==0.4.0
 flatbuffers==1.12
 fr-core-news-md @ https://github.com/explosion/spacy-models/releases/download/fr_core_news_md-3.2.0/fr_core_news_md-3.2.0-py3-none-any.whl
@@ -60,6 +62,7 @@ httpcore==0.11.1
 httplib2==0.20.2
 httptools==0.3.0
 httpx==0.15.4
+huggingface-hub==0.1.2
 humanfriendly==10.0
 idna==2.10
 importlib-metadata==4.8.2
@@ -121,7 +124,7 @@ questionary==1.5.2
 randomname==0.1.5
 rasa==2.8.14
 rasa-sdk==2.8.3
-rasa-x==0.42.6 --extra-index-url https://pypi.rasa.com/simple
+rasa-x==0.42.6
 redis==3.5.3
 regex==2020.9.27
 requests==2.25.1
@@ -133,6 +136,7 @@ rsa==4.8
 ruamel.yaml==0.16.13
 ruamel.yaml.clib==0.2.6
 s3transfer==0.5.0
+sacremoses==0.0.46
 sanic==20.9.0
 Sanic-Cors==0.10.0.post3
 sanic-jwt==1.6.0
@@ -141,6 +145,7 @@ Sanic-Plugins-Framework==0.9.5
 sanic-routing==0.7.2
 scikit-learn==0.24.2
 scipy==1.7.3
+sentencepiece==0.1.96
 sentry-sdk==0.19.5
 six==1.15.0
 sklearn-crfsuite==0.3.6
@@ -166,10 +171,13 @@ tensorflow-probability==0.11.1
 tensorflow-text==2.6.0
 termcolor==1.1.0
 terminaltables==3.1.0
+text-unidecode==1.3
 thinc==8.0.13
 threadpoolctl==3.0.0
+tokenizers==0.5.0
 toolz==0.11.2
 tqdm==4.59.0
+transformers==2.5.0
 twilio==6.50.1
 typeguard==2.13.2
 typer==0.4.0

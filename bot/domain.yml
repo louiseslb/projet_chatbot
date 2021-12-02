@@ -35,6 +35,8 @@ intents:
     use_entities: true
 - out_of_scope:
     use_entities: true
+- change_name:
+    use_entities: true
 entities:
 - date
 - number
@@ -101,7 +103,7 @@ responses:
   utter_ask_mail:
   - text: Quelle est votre adresse mail SVP?
   utter_ask_name:
-    - text: À quel nom souhaitez vous effectuer la réservation?
+  - text: À quel nom souhaitez vous effectuer la réservation?
   utter_recap:
   - text: |-
       Merci pour ces informations. ce récapitulatif est il correct?
@@ -144,13 +146,13 @@ forms:
       date_departure:
       - entity: date
         type: from_entity
+      number_person:
+        - entity: number
+          type: from_entity
       mail:
       - entity: mail
         type: from_entity
-      number_person:
-      - entity: number
-        type: from_entity
       name:
-        - entity: name
-          type: from_entity
+      - entity: name
+        type: from_entity
 e2e_actions: []
